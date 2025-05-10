@@ -46,7 +46,7 @@
         <!--All Coctails-->
         <scene sceneID="0K8-oZ-A5H">
             <objects>
-                <tableViewController id="dXN-N0-GNF" customClass="cock" sceneMemberID="viewController">
+                <tableViewController id="dXN-N0-GNF" customClass="CoctailsListTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EYg-3F-nG9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="-361" y="704"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favourites Table View Controller-->
         <scene sceneID="QUb-Cz-oKz">
             <objects>
-                <tableViewController id="Kzh-5R-TSt" sceneMemberID="viewController">
+                <tableViewController id="Kzh-5R-TSt" customClass="FavouritesTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8fM-Pc-SGa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
