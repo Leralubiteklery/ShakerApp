@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqb-VX-sHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2331" y="704"/>
+            <point key="canvasLocation" x="3257.2519083969464" y="703.52112676056345"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3IO-kq-hsU">
@@ -35,7 +35,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dXN-N0-GNF" kind="relationship" relationship="viewControllers" id="FUN-cb-aiX"/>
+                        <segue destination="lq4-vK-Yey" kind="relationship" relationship="viewControllers" id="FUN-cb-aiX"/>
                         <segue destination="s0V-HY-W6q" kind="relationship" relationship="viewControllers" id="Aye-CX-wQ8"/>
                     </connections>
                 </tabBarController>
@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
-        <!--All Coctails-->
+        <!--Shake 'em!-->
         <scene sceneID="0K8-oZ-A5H">
             <objects>
                 <tableViewController id="dXN-N0-GNF" customClass="CoctailsListTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,11 +66,11 @@
                             <outlet property="delegate" destination="dXN-N0-GNF" id="Dkm-0P-ttK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="All Coctails" image="wineglass.fill" catalog="system" id="LQS-dN-h8w"/>
+                    <navigationItem key="navigationItem" title="Shake 'em!" id="8yQ-B6-yiX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jod-WC-hEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="704"/>
+            <point key="canvasLocation" x="565.64885496183206" y="703.52112676056345"/>
         </scene>
         <!--Favourites Table View Controller-->
         <scene sceneID="QUb-Cz-oKz">
@@ -107,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sv1-Fg-tWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="704"/>
+            <point key="canvasLocation" x="2460.3053435114502" y="703.52112676056345"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="uhS-wO-xJ9">
@@ -126,7 +126,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJH-Uc-1jX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="704"/>
+            <point key="canvasLocation" x="1611.4503816793892" y="703.52112676056345"/>
+        </scene>
+        <!--All Coctails-->
+        <scene sceneID="HuD-fL-D1K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lq4-vK-Yey" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Coctails" image="wineglass.fill" catalog="system" id="LQS-dN-h8w"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iPA-Z9-CaW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="33"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dXN-N0-GNF" kind="relationship" relationship="rootViewController" id="njU-i2-kCm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ogb-GH-kBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-361.06870229007632" y="703.52112676056345"/>
         </scene>
     </scenes>
     <resources>
