@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCoctailViewController: UIViewController {
+class NewCocktailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
