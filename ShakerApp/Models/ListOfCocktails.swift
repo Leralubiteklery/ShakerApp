@@ -13,7 +13,7 @@ struct ListOfCocktails:  Codable {
 
 struct Drink: Codable {
     let name: String
-    let image: URL
+    let imageURL: URL
     let instructions: String
     let ingridients: [Ingridient]
     
@@ -34,7 +34,7 @@ struct Drink: Codable {
         
         name = try container.decode(String.self, forKey: .name)
         instructions = try container.decode(String.self, forKey: .instructions)
-        image = try container.decode(URL.self, forKey: .image)
+        imageURL = try container.decode(URL.self, forKey: .image)
         
         var tempIngridients: [Ingridient] = []
         
@@ -58,7 +58,7 @@ struct Drink: Codable {
         
         try container.encode(name, forKey: .name)
         try container.encode(instructions, forKey: .instructions)
-        try container.encode(image, forKey: .image)
+        try container.encode(imageURL, forKey: .image)
         
         for (index, ingridient) in ingridients.enumerated() where index < 15 {
             let ingridientKey = CodingKeys(stringValue: "strIngredient\(index + 1)")!
