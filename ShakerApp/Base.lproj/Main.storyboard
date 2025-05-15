@@ -46,7 +46,7 @@
         <!--Shake 'em!-->
         <scene sceneID="0K8-oZ-A5H">
             <objects>
-                <tableViewController id="dXN-N0-GNF" customClass="CoctailsListTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dXN-N0-GNF" customClass="CocktailsListTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EYg-3F-nG9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

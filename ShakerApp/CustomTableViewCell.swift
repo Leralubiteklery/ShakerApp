@@ -13,5 +13,8 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ingridientsLabel: UILabel!
     
-    
+    func configure(with drink: Cocktail) {
+        nameLabel.text = drink.name
+        
+    }
 }
