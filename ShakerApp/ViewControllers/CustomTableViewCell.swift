@@ -13,7 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ingridientsLabel: UILabel!
     
-    func configure(with drink: Cocktail) {
+    func configure(with drink: Drink) {
         nameLabel.text = drink.name
         
         NetworkManager.shared.fetchImage(from: drink.imageURL) { [weak self] result in

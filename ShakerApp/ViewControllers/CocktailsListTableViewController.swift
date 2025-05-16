@@ -30,10 +30,22 @@ class CocktailsListTableViewController: UITableViewController {
 
         return cell
     }
-  
-
-   
+    
+//    MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedDrink = listOfCocktails?.drinks[indexPath.row]
+        let cocktailDetailVC = CocktailDetailsViewController()
+        cocktailDetailVC.cocktailID = selectedDrink?.id
+        performSegue(withIdentifier: "showDetails", sender: selectedDrink)
+    }
+    
+//    MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cocktailsDetailsVC = segue.destination as? CocktailDetailsViewController else { return }
+        cocktailsDetailsVC.listOfCocktails = sender as? ListOfCocktails    
+    }
 }
+
 
 // MARK: - Networking
 extension CocktailsListTableViewController {

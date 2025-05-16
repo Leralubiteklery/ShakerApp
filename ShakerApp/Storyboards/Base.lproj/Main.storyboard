@@ -84,7 +84,7 @@
                                 <connections>
                                     <outlet property="cocktailImage" destination="O0a-7R-4ew" id="qgD-xl-iwL"/>
                                     <outlet property="nameLabel" destination="FzP-Pg-nee" id="GDU-XQ-I56"/>
-                                    <segue destination="Rvl-ff-jcf" kind="show" id="JyE-s4-EEe"/>
+                                    <segue destination="Rvl-ff-jcf" kind="show" identifier="showDetails" id="JyE-s4-EEe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,15 +99,15 @@
             </objects>
             <point key="canvasLocation" x="565.64885496183206" y="703.52112676056345"/>
         </scene>
-        <!--View Controller-->
+        <!--Cocktail Details View Controller-->
         <scene sceneID="LGC-fG-5eJ">
             <objects>
-                <viewController id="Rvl-ff-jcf" sceneMemberID="viewController">
+                <viewController id="Rvl-ff-jcf" customClass="CocktailDetailsViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WrZ-Nr-Ex8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-bl-eni">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktailPlaceholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-bl-eni">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="378"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="378" id="nfW-Tw-Yc6"/>
@@ -159,6 +159,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bRK-7r-PD2"/>
+                    <connections>
+                        <outlet property="cocktailImage" destination="sH0-bl-eni" id="kmP-HR-Zlt"/>
+                        <outlet property="listOfIngridientsLabel" destination="Mek-qs-AGr" id="djD-H7-p6B"/>
+                        <outlet property="listOfInstructionsLabel" destination="k0Q-CE-Y43" id="zuq-eu-096"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKg-pn-xBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,6 +244,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cocktailPlaceholderImage" width="988" height="991"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star.circle.fill" catalog="system" width="128" height="123"/>
         <image name="wineglass.fill" catalog="system" width="95" height="128"/>

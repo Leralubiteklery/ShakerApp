@@ -58,6 +58,7 @@ class NetworkManager {
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 completion(.failure(.noData))
+                print(error)
                 return
             }
             
