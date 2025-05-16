@@ -26,7 +26,7 @@ class CocktailsListTableViewController: UITableViewController {
         guard let drink = listOfCocktails?.drinks[indexPath.row] else { return UITableViewCell() }
         cell.configure(with: drink)
         
-//        cell.cocktailImage.layer.cornerRadius = 20
+        cell.cocktailImage.layer.cornerRadius = 20
 
         return cell
     }

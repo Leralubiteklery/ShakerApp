@@ -16,5 +16,15 @@ class CustomTableViewCell: UITableViewCell {
     func configure(with drink: Cocktail) {
         nameLabel.text = drink.name
         
+        NetworkManager.shared.fetchImage(from: drink.imageURL) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.cocktailImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+    
+    
 }

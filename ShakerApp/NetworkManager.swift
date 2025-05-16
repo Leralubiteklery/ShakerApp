@@ -47,5 +47,28 @@ class NetworkManager {
         }.resume()
     }
     
-    
+    func fetchImage(from url: URL?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
+        guard let url = url else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion(.success(data))
+            }
+        }.resume()
+    }
 }

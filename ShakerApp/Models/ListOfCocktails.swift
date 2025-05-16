@@ -13,13 +13,13 @@ struct ListOfCocktails:  Codable {
 
 struct Cocktail: Codable {
     let name: String
-//    let imageURL: URL
+    let imageURL: URL
 //    let instructions: String
 //    let ingridients: [Ingridient]
     
     enum CodingKeys: String, CodingKey {
         case name = "strDrink"
-//        case image = "strDrinkThumb"
+        case image = "strDrinkThumb"
 //        case instructions = "strInstructions"
 //        case strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
 //             strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
@@ -29,15 +29,15 @@ struct Cocktail: Codable {
 //             strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15
     }
     
-//    init(from decoder: any Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        
-//        name = try container.decode(String.self, forKey: .name)
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        name = try container.decode(String.self, forKey: .name)
 //        instructions = try container.decode(String.self, forKey: .instructions)
-//        imageURL = try container.decode(URL.self, forKey: .image)
-//        
+        imageURL = try container.decode(URL.self, forKey: .image)
+        
 //        var tempIngridients: [Ingridient] = []
-//        
+        
 //        for number in 1...15 {
 //            let ingridientKey = CodingKeys(stringValue: "strIngredient\(number)")!
 //            let measureKey = CodingKeys(stringValue: "strMeasure\(number)")!
@@ -51,23 +51,23 @@ struct Cocktail: Codable {
 //        }
 //        
 //        ingridients = tempIngridients
-//    }
+    }
     
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        
-//        try container.encode(name, forKey: .name)
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(name, forKey: .name)
 //       try container.encode(instructions, forKey: .instructions)
-//        try container.encode(imageURL, forKey: .image)
-//
+        try container.encode(imageURL, forKey: .image)
+
 //        for (index, ingridient) in ingridients.enumerated() where index < 15 {
 //            let ingridientKey = CodingKeys(stringValue: "strIngredient\(index + 1)")!
 //            let measureKey = CodingKeys(stringValue: "strMeasure\(index + 1)")!
-//            
+            
 //            try container.encode(ingridient.name, forKey: ingridientKey)
 //            try container.encode(ingridient.measure, forKey: measureKey)
 //        }
-//    }
+    }
 }
 
 //struct Ingridient {
