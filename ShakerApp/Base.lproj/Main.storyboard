@@ -47,58 +47,42 @@
         <scene sceneID="0K8-oZ-A5H">
             <objects>
                 <tableViewController id="dXN-N0-GNF" customClass="CocktailsListTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EYg-3F-nG9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EYg-3F-nG9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cocktailCell" id="Axj-OK-rha" customClass="CustomTableViewCell" customModule="ShakerApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="105"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cocktailCell" rowHeight="90" id="Axj-OK-rha" customClass="CustomTableViewCell" customModule="ShakerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Axj-OK-rha" id="uhR-jf-hyZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzP-Pg-nee">
+                                            <rect key="frame" x="116" y="34.666666666666664" width="273" height="21"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-7R-4ew">
-                                            <rect key="frame" x="15" y="10" width="85" height="85"/>
+                                            <rect key="frame" x="16" y="10" width="70" height="70"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="85" id="07a-wY-Bq1"/>
-                                                <constraint firstAttribute="width" constant="85" id="0kI-XT-fVh"/>
+                                                <constraint firstAttribute="height" constant="70" id="tfJ-dh-p3o"/>
+                                                <constraint firstAttribute="width" constant="70" id="zv5-c6-YVa"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzP-Pg-nee">
-                                            <rect key="frame" x="125" y="10" width="252" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="PAM-Hi-GBX"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of ingridients" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYy-fw-tyl">
-                                            <rect key="frame" x="125" y="43" width="252" height="52"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="52" id="J2Y-vV-z8K"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="FzP-Pg-nee" secondAttribute="trailing" constant="16" id="0o9-t1-rCQ"/>
-                                        <constraint firstItem="FzP-Pg-nee" firstAttribute="top" secondItem="uhR-jf-hyZ" secondAttribute="top" constant="10" id="7lM-bB-G2r"/>
-                                        <constraint firstItem="FYy-fw-tyl" firstAttribute="leading" secondItem="O0a-7R-4ew" secondAttribute="trailing" constant="25" id="L9I-0a-K3G"/>
-                                        <constraint firstAttribute="trailing" secondItem="FYy-fw-tyl" secondAttribute="trailing" constant="16" id="YdY-hc-vwA"/>
-                                        <constraint firstItem="O0a-7R-4ew" firstAttribute="leading" secondItem="uhR-jf-hyZ" secondAttribute="leading" constant="15" id="b9E-r0-BGu"/>
-                                        <constraint firstAttribute="bottom" secondItem="FYy-fw-tyl" secondAttribute="bottom" constant="10" id="h1o-Of-RRO"/>
-                                        <constraint firstItem="O0a-7R-4ew" firstAttribute="centerY" secondItem="uhR-jf-hyZ" secondAttribute="centerY" id="hQF-99-g5h"/>
-                                        <constraint firstItem="FzP-Pg-nee" firstAttribute="leading" secondItem="O0a-7R-4ew" secondAttribute="trailing" constant="25" id="k1P-4d-fMD"/>
+                                        <constraint firstItem="FzP-Pg-nee" firstAttribute="trailing" secondItem="uhR-jf-hyZ" secondAttribute="trailingMargin" constant="16" id="PTr-Vy-fK3"/>
+                                        <constraint firstItem="O0a-7R-4ew" firstAttribute="centerY" secondItem="uhR-jf-hyZ" secondAttribute="centerY" id="PWR-eO-kEb"/>
+                                        <constraint firstItem="O0a-7R-4ew" firstAttribute="leading" secondItem="uhR-jf-hyZ" secondAttribute="leading" constant="16" id="ch9-ad-3Ar"/>
+                                        <constraint firstItem="FzP-Pg-nee" firstAttribute="centerY" secondItem="uhR-jf-hyZ" secondAttribute="centerY" id="dju-fy-OpT"/>
+                                        <constraint firstItem="FzP-Pg-nee" firstAttribute="leading" secondItem="O0a-7R-4ew" secondAttribute="trailing" constant="30" id="ymq-4p-DTD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cocktailImage" destination="O0a-7R-4ew" id="qgD-xl-iwL"/>
-                                    <outlet property="ingridientsLabel" destination="FYy-fw-tyl" id="Pft-RF-aIn"/>
                                     <outlet property="nameLabel" destination="FzP-Pg-nee" id="GDU-XQ-I56"/>
                                 </connections>
                             </tableViewCell>
