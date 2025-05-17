@@ -9,6 +9,7 @@ import Foundation
 
 enum Link: String {
     case cocktailsList = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
+    case cocktailDetails = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
 }
 
 enum NetworkError: Error {

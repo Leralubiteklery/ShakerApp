@@ -41,8 +41,11 @@ class CocktailsListTableViewController: UITableViewController {
     
 //    MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let cocktailsDetailsVC = segue.destination as? CocktailDetailsViewController else { return }
-        cocktailsDetailsVC.listOfCocktails = sender as? ListOfCocktails    
+       guard
+        let cocktailsDetailsVC = segue.destination as? CocktailDetailsViewController,
+        let selectedDrink = sender as? Drink else { return }
+        
+        cocktailsDetailsVC.cocktailID = selectedDrink.id
     }
 }
 
@@ -54,7 +57,6 @@ extension CocktailsListTableViewController {
         NetworkManager.shared.fetch(ListOfCocktails.self, from: Link.cocktailsList.rawValue) { [weak self] result in
             switch result {
             case .success(let cocktails):
-                print(cocktails)
                 self?.listOfCocktails = cocktails
                 self?.tableView.reloadData()
             case .failure(let error):

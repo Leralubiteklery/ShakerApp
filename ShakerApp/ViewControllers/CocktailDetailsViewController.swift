@@ -13,24 +13,42 @@ class CocktailDetailsViewController: UIViewController {
     @IBOutlet weak var listOfIngridientsLabel: UILabel!
     @IBOutlet weak var listOfInstructionsLabel: UILabel!
     
-    var listOfCocktails: ListOfCocktails!
+    var drinkDetails: DrinkDetails!
     var cocktailID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCocktailDetails()
+    }
 
-        // Do any additional setup after loading the view.
+    // MARK: - Networking
+
+    func fetchCocktailDetails() {
+        guard let id = cocktailID else {
+            print("no cocktail id")
+            return
+        }
+        
+        let url = Link.cocktailDetails.rawValue + id
+        print(url)
+        NetworkManager.shared.fetch(DrinkDetails.self, from: url) { [weak self] result in
+            switch result {
+            case .success(let cocktailDetails):
+                self?.drinkDetails = cocktailDetails
+                print(cocktailDetails)
+                DispatchQueue.main.async {
+                    self?.drinkDetails = cocktailDetails
+                    self?.updateUI()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        listOfIngridientsLabel.text = drinkDetails.convertToString(drinkDetails.ingridients)
+        listOfInstructionsLabel.text = drinkDetails.instructions
+  
     }
-    */
-
 }
