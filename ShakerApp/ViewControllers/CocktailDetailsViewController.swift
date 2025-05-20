@@ -31,13 +31,17 @@ class CocktailDetailsViewController: UIViewController {
         
         let url = Link.cocktailDetails.rawValue + id
         print(url)
-        NetworkManager.shared.fetch(DrinkDetails.self, from: url) { [weak self] result in
+        
+        NetworkManager.shared.fetch(DrinkDetailsWrapper.self, from: url) { [weak self] result in
             switch result {
-            case .success(let cocktailDetails):
-                self?.drinkDetails = cocktailDetails
-                print(cocktailDetails)
+            case .success(let wrapper):
+                guard let drink = wrapper.drinks.first else {
+                    print("no drinks in resposne")
+                    return
+                }
+                print(drink)
                 DispatchQueue.main.async {
-                    self?.drinkDetails = cocktailDetails
+                    self?.drinkDetails = drink
                     self?.updateUI()
                 }
             case .failure(let error):
@@ -49,6 +53,7 @@ class CocktailDetailsViewController: UIViewController {
     func updateUI() {
         listOfIngridientsLabel.text = drinkDetails.convertToString(drinkDetails.ingridients)
         listOfInstructionsLabel.text = drinkDetails.instructions
+        print("ui updated")
   
     }
 }

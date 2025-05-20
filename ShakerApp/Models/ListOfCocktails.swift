@@ -30,6 +30,10 @@ struct Drink: Decodable {
         let id: String
         let ingridients: [Ingridient]
         
+//        func convertToString(_ array: [Ingridient]) -> String {
+//            array.map {" \($0.measure) \($0.name)"}.joined(separator: "\n")
+//        }
+        
         func convertToString(_ array: [Ingridient]) -> String {
             array.map {" \($0.measure) \($0.name)"}.joined(separator: "\n")
         }
@@ -90,7 +94,11 @@ struct Drink: Decodable {
 //    }
 }
 
-struct Ingridient {
+struct Ingridient: Decodable {
     let name: String
     let measure: String
+}
+
+struct DrinkDetailsWrapper: Decodable {
+    let drinks: [DrinkDetails]
 }

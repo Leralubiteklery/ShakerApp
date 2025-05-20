@@ -34,8 +34,8 @@ class CocktailsListTableViewController: UITableViewController {
 //    MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedDrink = listOfCocktails?.drinks[indexPath.row]
-        let cocktailDetailVC = CocktailDetailsViewController()
-        cocktailDetailVC.cocktailID = selectedDrink?.id
+//        let cocktailDetailVC = CocktailDetailsViewController()
+//        cocktailDetailVC.cocktailID = selectedDrink?.id
         performSegue(withIdentifier: "showDetails", sender: selectedDrink)
     }
     
