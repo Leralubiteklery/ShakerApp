@@ -18,6 +18,14 @@ class CocktailDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+           navigationController?.navigationBar.shadowImage = UIImage()
+           navigationController?.navigationBar.isTranslucent = true
+           
+           
+           self.edgesForExtendedLayout = [.top]
+        
         fetchCocktailDetails()
     }
 
