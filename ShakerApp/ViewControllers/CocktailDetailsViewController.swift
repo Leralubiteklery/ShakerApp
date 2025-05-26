@@ -51,10 +51,10 @@ class CocktailDetailsViewController: UIViewController {
     }
     
     func fetchCocktailImage() {
-        NetworkManager.shared.fetchImage(from: drinkDetails.imageURL) { result in
+        NetworkManager.shared.fetchImage(from: drinkDetails.imageURL) { [weak self] result in
             switch result {
             case .success(let imageData):
-                self.cocktailImage.image = UIImage(data: imageData)
+                self?.cocktailImage.image = UIImage(data: imageData)
             case .failure(let error):
                 print(error)
             }
