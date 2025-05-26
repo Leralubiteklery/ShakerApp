@@ -18,14 +18,6 @@ class CocktailDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-           navigationController?.navigationBar.shadowImage = UIImage()
-           navigationController?.navigationBar.isTranslucent = true
-           
-           
-           self.edgesForExtendedLayout = [.top]
-        
         fetchCocktailDetails()
     }
 
@@ -58,10 +50,20 @@ class CocktailDetailsViewController: UIViewController {
         }
     }
     
+    func fetchCocktailImage() {
+        NetworkManager.shared.fetchImage(from: drinkDetails.imageURL) { result in
+            switch result {
+            case .success(let imageData):
+                self.cocktailImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     func updateUI() {
         listOfIngridientsLabel.text = drinkDetails.convertToString(drinkDetails.ingridients)
         listOfInstructionsLabel.text = drinkDetails.instructions
-        print("ui updated")
-  
+        fetchCocktailImage()
     }
 }
