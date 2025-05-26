@@ -29,11 +29,7 @@ struct Drink: Decodable {
         let instructions: String
         let id: String
         let ingridients: [Ingridient]
-        
-//        func convertToString(_ array: [Ingridient]) -> String {
-//            array.map {" \($0.measure) \($0.name)"}.joined(separator: "\n")
-//        }
-        
+
         func convertToString(_ array: [Ingridient]) -> String {
             array.map {" \($0.measure) \($0.name)"}.joined(separator: "\n")
         }
