@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="565.64885496183206" y="703.52112676056345"/>
         </scene>
-        <!--Cocktail Details View Controller-->
+        <!--Сocktail Name-->
         <scene sceneID="LGC-fG-5eJ">
             <objects>
                 <viewController id="Rvl-ff-jcf" customClass="CocktailDetailsViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +188,7 @@
                             <constraint firstItem="6w2-Oo-W71" firstAttribute="width" secondItem="WrZ-Nr-Ex8" secondAttribute="width" id="xYA-Lb-dOc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bRK-7r-PD2"/>
+                    <navigationItem key="navigationItem" title="Сocktail Name" id="bRK-7r-PD2"/>
                     <connections>
                         <outlet property="cocktailImage" destination="sH0-bl-eni" id="kmP-HR-Zlt"/>
                         <outlet property="listOfIngridientsLabel" destination="Mek-qs-AGr" id="djD-H7-p6B"/>

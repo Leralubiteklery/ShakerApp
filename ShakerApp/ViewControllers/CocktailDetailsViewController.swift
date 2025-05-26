@@ -64,6 +64,7 @@ class CocktailDetailsViewController: UIViewController {
     func updateUI() {
         listOfIngridientsLabel.text = drinkDetails.convertToString(drinkDetails.ingridients)
         listOfInstructionsLabel.text = drinkDetails.instructions
+        navigationItem.title = drinkDetails.name
         fetchCocktailImage()
     }
 }
