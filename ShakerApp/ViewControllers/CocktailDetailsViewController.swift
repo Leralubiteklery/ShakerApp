@@ -9,23 +9,23 @@ import UIKit
 
 class CocktailDetailsViewController: UIViewController {
 
+    private var spinnerView = UIActivityIndicatorView()
+    var drinkDetails: DrinkDetails!
+    var cocktailID: String?
+    
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var listOfIngridientsLabel: UILabel!
     @IBOutlet weak var listOfInstructionsLabel: UILabel!
     
-    var drinkDetails: DrinkDetails!
-    var cocktailID: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCocktailDetails()
+        showSpinner(in: view)
     }
 
     // MARK: - Networking
-
     func fetchCocktailDetails() {
         guard let id = cocktailID else {
-            print("no cocktail id")
             return
         }
         
@@ -36,11 +36,9 @@ class CocktailDetailsViewController: UIViewController {
             switch result {
             case .success(let wrapper):
                 guard let drink = wrapper.drinks.first else {
-                    print("no drinks in resposne")
                     return
                 }
-                print(drink)
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self?.drinkDetails = drink
                     self?.updateUI()
                 }
@@ -55,6 +53,7 @@ class CocktailDetailsViewController: UIViewController {
             switch result {
             case .success(let imageData):
                 self?.cocktailImage.image = UIImage(data: imageData)
+                self?.spinnerView.stopAnimating()
             case .failure(let error):
                 print(error)
             }
@@ -66,5 +65,15 @@ class CocktailDetailsViewController: UIViewController {
         listOfInstructionsLabel.text = drinkDetails.instructions
         navigationItem.title = drinkDetails.name
         fetchCocktailImage()
+    }
+    
+    private func showSpinner(in view: UIView) {
+        spinnerView = UIActivityIndicatorView(style: .large)
+        spinnerView.color = .black
+        spinnerView.center = cocktailImage.center
+        spinnerView.hidesWhenStopped = true
+        
+        view.addSubview(spinnerView)
+        spinnerView.startAnimating()
     }
 }
