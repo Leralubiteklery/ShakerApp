@@ -38,7 +38,7 @@ class CocktailDetailsViewController: UIViewController {
                 guard let drink = wrapper.drinks.first else {
                     return
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                DispatchQueue.main.async {
                     self?.drinkDetails = drink
                     self?.updateUI()
                 }
