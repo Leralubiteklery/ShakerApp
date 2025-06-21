@@ -188,7 +188,11 @@
                             <constraint firstItem="6w2-Oo-W71" firstAttribute="width" secondItem="WrZ-Nr-Ex8" secondAttribute="width" id="xYA-Lb-dOc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Сocktail Name" id="bRK-7r-PD2"/>
+                    <navigationItem key="navigationItem" title="Сocktail Name" id="bRK-7r-PD2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="ndQ-KY-Xzd">
+                            <color key="tintColor" red="0.039215686270000001" green="0.01300411712" blue="0.08356045174" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cocktailImage" destination="sH0-bl-eni" id="kmP-HR-Zlt"/>
                         <outlet property="listOfIngridientsLabel" destination="Mek-qs-AGr" id="djD-H7-p6B"/>
@@ -276,6 +280,7 @@
     <resources>
         <image name="cocktailPlaceholderImage" width="988" height="991"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.circle.fill" catalog="system" width="128" height="123"/>
         <image name="wineglass.fill" catalog="system" width="95" height="128"/>
         <systemColor name="systemBackgroundColor">
