@@ -16,6 +16,7 @@ class CocktailDetailsViewController: UIViewController {
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var listOfIngridientsLabel: UILabel!
     @IBOutlet weak var listOfInstructionsLabel: UILabel!
+    @IBOutlet weak var isFavouriteButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class CocktailDetailsViewController: UIViewController {
         showSpinner(in: view)
     }
 
+    @IBAction func isFavouriteButtonTapped(_ sender: Any) {
+    }
+    
     // MARK: - Networking
     func fetchCocktailDetails() {
         guard let id = cocktailID else {
