@@ -13,6 +13,8 @@ class StorageManager {
     private let defaults = UserDefaults.standard
     private let favouriteKey = "favouriteKey"
     
+    private init() {}
+    
     func save(drinkId: String) {
         var favouriteIds = fetchFavouriteIds()
         favouriteIds.append(drinkId)
