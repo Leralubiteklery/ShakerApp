@@ -15,22 +15,31 @@ class StorageManager {
     
     private init() {}
     
-    func save(drinkId: String) {
+    func addToFavourites(_ drinkId: String) {
         var favouriteIds = fetchFavouriteIds()
-        favouriteIds.append(drinkId)
-        defaults.set(favouriteIds, forKey: favouriteKey)
+        
+        if !favouriteIds.contains(drinkId){
+            favouriteIds.append(drinkId)
+            defaults.set(favouriteIds, forKey: favouriteKey)
+        }
     }
     
     func fetchFavouriteIds() -> [String] {
-        if let favouriteIds = defaults.value(forKey: favouriteKey) as? [String] {
-            return favouriteIds
-        }
-        return []
+        defaults.stringArray(forKey: favouriteKey) ?? []
     }
     
-    func deleteId(at index: Int) {
+    
+    func removeFromFavourites(at index: Int) {
         var favouriteIds = fetchFavouriteIds()
         favouriteIds.remove(at: index)
         defaults.set(favouriteIds, forKey: favouriteKey)
     }
+    
+//    func setFavouriteStatus(for drinkId: String, with status: Bool) {
+//        defaults.set(status, forKey: drinkId)
+//    }
+//    
+//    func getFavouriteStatus(for drinkId: String) -> Bool {
+//        defaults.bool(forKey: drinkId)
+//    }
 }

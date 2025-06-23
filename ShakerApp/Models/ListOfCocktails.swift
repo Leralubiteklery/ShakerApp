@@ -29,7 +29,7 @@ struct Drink: Decodable {
         let instructions: String
         let id: String
         let ingridients: [Ingridient]
-
+       
         func convertToString(_ array: [Ingridient]) -> String {
             array.map {" \($0.measure) \($0.name)"}.joined(separator: "\n")
         }
@@ -54,6 +54,7 @@ struct Drink: Decodable {
         id = try container.decode(String.self, forKey: .id)
         instructions = try container.decode(String.self, forKey: .instructions)
         imageURL = try container.decode(URL.self, forKey: .imageURL)
+        
         
         var tempIngridients: [Ingridient] = []
         
