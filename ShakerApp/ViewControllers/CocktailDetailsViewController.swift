@@ -13,6 +13,19 @@ class CocktailDetailsViewController: UIViewController {
     var drinkDetails: DrinkDetails!
     var cocktailID: String?
     
+    var isFavourite: Bool {
+        get {
+            StorageManager.shared.isFavourite(cocktailID ?? "")
+        }
+        set {
+            if newValue {
+                StorageManager.shared.addToFavourites(cocktailID ?? "")
+            } else {
+                StorageManager.shared.removeFromFavourites(cocktailID ?? "")
+            }
+        }
+    }
+    
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var listOfIngridientsLabel: UILabel!
     @IBOutlet weak var listOfInstructionsLabel: UILabel!
@@ -23,8 +36,15 @@ class CocktailDetailsViewController: UIViewController {
         fetchCocktailDetails()
         showSpinner(in: view)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateFavouriteButton()
+    }
 
     @IBAction func isFavouriteButtonTapped(_ sender: Any) {
+        isFavourite.toggle()
+        updateFavouriteButton()
     }
     
     // MARK: - Networking
@@ -79,5 +99,10 @@ class CocktailDetailsViewController: UIViewController {
         
         view.addSubview(spinnerView)
         spinnerView.startAnimating()
+    }
+    
+    private func updateFavouriteButton() {
+        let image = UIImage(systemName: isFavourite ? "star.fill" : "star")
+        isFavouriteButton.image = image
     }
 }

@@ -28,10 +28,13 @@ class StorageManager {
         defaults.stringArray(forKey: favouriteKey) ?? []
     }
     
+    func isFavourite(_ drinkId: String) -> Bool {
+        fetchFavouriteIds().contains(drinkId)
+    }
     
-    func removeFromFavourites(at index: Int) {
+    func removeFromFavourites(_ drinkId: String) {
         var favouriteIds = fetchFavouriteIds()
-        favouriteIds.remove(at: index)
+        favouriteIds.removeAll { $0 == drinkId }
         defaults.set(favouriteIds, forKey: favouriteKey)
     }
     
