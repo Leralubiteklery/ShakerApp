@@ -37,12 +37,4 @@ class StorageManager {
         favouriteIds.removeAll { $0 == drinkId }
         defaults.set(favouriteIds, forKey: favouriteKey)
     }
-    
-//    func setFavouriteStatus(for drinkId: String, with status: Bool) {
-//        defaults.set(status, forKey: drinkId)
-//    }
-//    
-//    func getFavouriteStatus(for drinkId: String) -> Bool {
-//        defaults.bool(forKey: drinkId)
-//    }
 }
