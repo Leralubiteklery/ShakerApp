@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Cocktail View Controller-->
-        <scene sceneID="WS5-ma-0s1">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="o8A-fa-c1N" customClass="NewCocktailViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ve4-Iv-pHL">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="OQX-2l-z7f"/>
-                        <color key="backgroundColor" systemColor="systemCyanColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="r4r-gb-3M2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uqb-VX-sHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3698" y="704"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3IO-kq-hsU">
             <objects>
@@ -41,7 +25,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hut-Hi-OMi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="619" y="-29"/>
         </scene>
         <!--Shake 'em!-->
         <scene sceneID="0K8-oZ-A5H">
@@ -99,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jod-WC-hEM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565.64885496183206" y="703.52112676056345"/>
+            <point key="canvasLocation" x="392" y="704"/>
         </scene>
         <!--Сocktail Name-->
         <scene sceneID="LGC-fG-5eJ">
@@ -205,9 +189,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKg-pn-xBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290.8396946564885" y="703.52112676056345"/>
+            <point key="canvasLocation" x="1016" y="1439"/>
         </scene>
-        <!--Favourites Table View Controller-->
+        <!--Favourites-->
         <scene sceneID="QUb-Cz-oKz">
             <objects>
                 <tableViewController id="Kzh-5R-TSt" customClass="FavouritesTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -215,24 +199,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cocktailCell" rowHeight="90" id="xwt-CG-Y7T" customClass="CustomTableViewCell" customModule="ShakerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwt-CG-Y7T" id="TVa-52-gCP">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwu-NX-ZB6">
+                                            <rect key="frame" x="116" y="34.666666666666664" width="273" height="21"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czW-ge-SH3">
+                                            <rect key="frame" x="16" y="10" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="1UY-jq-EoU"/>
+                                                <constraint firstAttribute="height" constant="70" id="wJ2-k2-qtO"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="czW-ge-SH3" firstAttribute="leading" secondItem="TVa-52-gCP" secondAttribute="leading" constant="16" id="Udp-LW-Rcq"/>
+                                        <constraint firstItem="czW-ge-SH3" firstAttribute="centerY" secondItem="TVa-52-gCP" secondAttribute="centerY" id="b7d-kQ-DbO"/>
+                                        <constraint firstItem="Fwu-NX-ZB6" firstAttribute="leading" secondItem="czW-ge-SH3" secondAttribute="trailing" constant="30" id="cGQ-7f-CNp"/>
+                                        <constraint firstItem="Fwu-NX-ZB6" firstAttribute="centerY" secondItem="TVa-52-gCP" secondAttribute="centerY" id="l0z-S8-J2K"/>
+                                        <constraint firstItem="Fwu-NX-ZB6" firstAttribute="trailing" secondItem="TVa-52-gCP" secondAttribute="trailingMargin" constant="16" id="tPL-bG-M9u"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cocktailImage" destination="czW-ge-SH3" id="ROh-p3-H96"/>
+                                    <outlet property="nameLabel" destination="Fwu-NX-ZB6" id="Kxe-Mo-vEz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Kzh-5R-TSt" id="WfH-Go-GKj"/>
                             <outlet property="delegate" destination="Kzh-5R-TSt" id="4oC-Zc-sFy"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="fqA-EN-4H7">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="a07-a6-yfI">
-                            <connections>
-                                <segue destination="o8A-fa-c1N" kind="show" id="jVC-Dx-l8D"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Favourites" id="fqA-EN-4H7"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sv1-Fg-tWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="704"/>
+            <point key="canvasLocation" x="2294" y="704"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="uhS-wO-xJ9">
@@ -243,6 +257,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j80-VN-LFD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -251,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJH-Uc-1jX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2169" y="704"/>
+            <point key="canvasLocation" x="1569" y="704"/>
         </scene>
         <!--All Coctails-->
         <scene sceneID="HuD-fL-D1K">
@@ -283,15 +305,11 @@
     </scenes>
     <resources>
         <image name="cocktailPlaceholderImage" width="988" height="991"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.circle.fill" catalog="system" width="128" height="123"/>
         <image name="wineglass.fill" catalog="system" width="95" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
