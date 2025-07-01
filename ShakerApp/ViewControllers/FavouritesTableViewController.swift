@@ -8,23 +8,36 @@
 import UIKit
 
 class FavouritesTableViewController: UITableViewController {
-
+    
+    private var favouriteCocktails: [Drink] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchFavouriteCocktails()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
+    private func fetchFavouriteCocktails() {
+        favouriteCocktails = DataManager.shared.getFavouriteCocktails()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        favouriteCocktails.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+       let drink = favouriteCocktails[indexPath.row]
+        
+        cell.configure(with: drink)
+        
+        cell.cocktailImage.layer.cornerRadius = 20
 
         return cell
     }

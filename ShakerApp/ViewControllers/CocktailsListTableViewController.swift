@@ -51,11 +51,11 @@ class CocktailsListTableViewController: UITableViewController {
 // MARK: - Networking
 extension CocktailsListTableViewController {
     private func fetchCocktailsList() {
-        print("fetching cocktails")
         NetworkManager.shared.fetch(ListOfCocktails.self, from: Link.cocktailsList.rawValue) { [weak self] result in
             switch result {
             case .success(let cocktails):
                 self?.listOfCocktails = cocktails
+                DataManager.shared.allCocktails = cocktails.drinks
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)

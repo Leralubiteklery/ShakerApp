@@ -25,6 +25,4 @@ class CustomTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
 }
