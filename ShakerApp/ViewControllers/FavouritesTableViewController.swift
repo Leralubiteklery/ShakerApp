@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavouritesTableViewController: UITableViewController {
+class FavouritesTableViewController: BaseCocktailListTableViewController {
     
     private var favouriteCocktails: [Drink] = []
     
@@ -36,9 +36,7 @@ class FavouritesTableViewController: UITableViewController {
        let drink = favouriteCocktails[indexPath.row]
         
         cell.configure(with: drink)
-        
         cell.cocktailImage.layer.cornerRadius = 20
-
         return cell
     }
 }

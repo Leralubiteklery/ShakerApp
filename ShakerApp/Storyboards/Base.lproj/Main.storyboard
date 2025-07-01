@@ -189,13 +189,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKg-pn-xBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="1439"/>
+            <point key="canvasLocation" x="1050" y="1439"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="QUb-Cz-oKz">
             <objects>
                 <tableViewController id="Kzh-5R-TSt" customClass="FavouritesTableViewController" customModule="ShakerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8fM-Pc-SGa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8fM-Pc-SGa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -243,6 +243,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Favourites" id="fqA-EN-4H7"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Rvl-ff-jcf" kind="show" identifier="showDetails" id="4Ra-aC-ij8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sv1-Fg-tWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,6 +306,9 @@
             <point key="canvasLocation" x="-361.06870229007632" y="703.52112676056345"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Ra-aC-ij8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cocktailPlaceholderImage" width="988" height="991"/>
         <image name="star" catalog="system" width="128" height="116"/>

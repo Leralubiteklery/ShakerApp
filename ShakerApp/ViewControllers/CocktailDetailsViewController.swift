@@ -50,8 +50,10 @@ class CocktailDetailsViewController: UIViewController {
     // MARK: - Networking
     func fetchCocktailDetails() {
         guard let id = cocktailID else {
+          
             return
         }
+        print("cocktailID: \(cocktailID ?? "nil")")
         
         let url = Link.cocktailDetails.rawValue + id
         print(url)

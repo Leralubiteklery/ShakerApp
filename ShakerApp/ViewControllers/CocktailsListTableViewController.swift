@@ -7,10 +7,8 @@
 
 import UIKit
 
-class CocktailsListTableViewController: UITableViewController {
+class CocktailsListTableViewController: BaseCocktailListTableViewController {
     
-    private var listOfCocktails: ListOfCocktails?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCocktailsList()
@@ -30,23 +28,7 @@ class CocktailsListTableViewController: UITableViewController {
 
         return cell
     }
-    
-//    MARK: - UITableViewDelegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedDrink = listOfCocktails?.drinks[indexPath.row]
-        performSegue(withIdentifier: "showDetails", sender: selectedDrink)
-    }
-    
-//    MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard
-        let cocktailsDetailsVC = segue.destination as? CocktailDetailsViewController,
-        let selectedDrink = sender as? Drink else { return }
-        
-        cocktailsDetailsVC.cocktailID = selectedDrink.id
-    }
 }
-
 
 // MARK: - Networking
 extension CocktailsListTableViewController {
