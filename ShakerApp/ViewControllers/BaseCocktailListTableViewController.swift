@@ -9,7 +9,9 @@ import UIKit
 
 class BaseCocktailListTableViewController: UITableViewController {
     
-    var listOfCocktails: ListOfCocktails?
+    var cocktails: [Drink] {
+        return []
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,7 @@ class BaseCocktailListTableViewController: UITableViewController {
 
     //    MARK: - UITableViewDelegate
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let selectedDrink = listOfCocktails?.drinks[indexPath.row]
+            let selectedDrink = cocktails[indexPath.row]
             performSegue(withIdentifier: "showDetails", sender: selectedDrink)
         }
         

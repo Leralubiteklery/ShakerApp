@@ -9,6 +9,12 @@ import UIKit
 
 class CocktailsListTableViewController: BaseCocktailListTableViewController {
     
+    var listOfCocktails: ListOfCocktails?
+    
+    override var cocktails: [Drink] {
+        listOfCocktails?.drinks ?? []
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCocktailsList()

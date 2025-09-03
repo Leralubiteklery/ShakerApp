@@ -11,6 +11,10 @@ class FavouritesTableViewController: BaseCocktailListTableViewController {
     
     private var favouriteCocktails: [Drink] = []
     
+    override var cocktails: [Drink] {
+        favouriteCocktails
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFavouriteCocktails()
@@ -33,7 +37,7 @@ class FavouritesTableViewController: BaseCocktailListTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-       let drink = favouriteCocktails[indexPath.row]
+        let drink = favouriteCocktails[indexPath.row]
         
         cell.configure(with: drink)
         cell.cocktailImage.layer.cornerRadius = 20
